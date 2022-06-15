@@ -5,7 +5,7 @@
 #include <geometry_msgs/msg/pose_stamped.hpp>
 #include <geometry_msgs/msg/pose.hpp>
 #include <eigen3/Eigen/Geometry>
-#include <tf2_eigen/tf2_eigen.h>
+#include <tf2_eigen/tf2_eigen.hpp>
 #include <ros2_trajectory_utilities/checks.h>
 
 namespace trajectory_utilities {

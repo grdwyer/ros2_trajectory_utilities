@@ -36,8 +36,10 @@ namespace trajectory_utilities {
     }
 
     bool retime_trajectory_constant_velocity(moveit::planning_interface::MoveGroupInterface::Plan &plan,
-                                             moveit::core::RobotStatePtr robot_state, double desired_velocity,
-                                             std::string &jmg_name, std::string &end_effector_link,
+                                             moveit::core::RobotStatePtr robot_state,
+                                             double desired_velocity,
+                                             std::string jmg_name,
+                                             std::string end_effector_link,
                                              moveit::planning_interface::MoveGroupInterface::Plan &retimed_plan) {
 
         const moveit::core::JointModelGroup *joint_model_group = robot_state->getJointModelGroup(jmg_name);
@@ -83,9 +85,11 @@ namespace trajectory_utilities {
     }
 
     bool retime_trajectory_trapezoidal_velocity(moveit::planning_interface::MoveGroupInterface::Plan &plan,
-                                                moveit::core::RobotStatePtr robot_state, double desired_velocity,
-                                                double desired_acceleration, std::string &jmg_name,
-                                                std::string &end_effector_link,
+                                                moveit::core::RobotStatePtr robot_state,
+                                                double desired_velocity,
+                                                double desired_acceleration,
+                                                std::string jmg_name,
+                                                std::string end_effector_link,
                                                 moveit::planning_interface::MoveGroupInterface::Plan &retimed_plan) {
 
         const moveit::core::JointModelGroup *joint_model_group = robot_state->getJointModelGroup(jmg_name);

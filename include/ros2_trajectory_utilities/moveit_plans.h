@@ -6,7 +6,7 @@
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <geometry_msgs/msg/pose_stamped.h>
 #include <eigen3/Eigen/Geometry>
-#include <tf2_eigen/tf2_eigen.h>
+#include <tf2_eigen/tf2_eigen.hpp>
 #include <ros2_trajectory_utilities/checks.h>
 
 namespace trajectory_utilities {
@@ -34,8 +34,10 @@ namespace trajectory_utilities {
      * @return bool to indicate success
      */
     bool retime_trajectory_constant_velocity(moveit::planning_interface::MoveGroupInterface::Plan &plan,
-                                             moveit::core::RobotStatePtr robot_state, double desired_velocity,
-                                             std::string &jmg_name, std::string &end_effector_link,
+                                             moveit::core::RobotStatePtr robot_state,
+                                             double desired_velocity,
+                                             std::string jmg_name,
+                                             std::string end_effector_link,
                                              moveit::planning_interface::MoveGroupInterface::Plan &retimed_plan);
 
     /**
@@ -50,9 +52,11 @@ namespace trajectory_utilities {
      * @return bool to indicate success
      */
     bool retime_trajectory_trapezoidal_velocity(moveit::planning_interface::MoveGroupInterface::Plan &plan,
-                                                moveit::core::RobotStatePtr robot_state, double desired_velocity,
-                                                double desired_acceleration, std::string &jmg_name,
-                                                std::string &end_effector_link,
+                                                moveit::core::RobotStatePtr robot_state,
+                                                double desired_velocity,
+                                                double desired_acceleration,
+                                                std::string jmg_name,
+                                                std::string end_effector_link,
                                                 moveit::planning_interface::MoveGroupInterface::Plan &retimed_plan);
 
 }
